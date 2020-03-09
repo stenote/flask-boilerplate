@@ -1,7 +1,7 @@
-import click
+from app import app
 
 
-@click.command("hello")
+@app.cli.command('hello')
 def hello():
     """hello world."""
     print("Hello World!")

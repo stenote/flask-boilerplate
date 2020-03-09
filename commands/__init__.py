@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 def register_blueprint(app):
     # 引入 blueprint
     from commands.blueprints import bps
@@ -7,10 +10,11 @@ def register_blueprint(app):
 
 
 def register_commands(app):
-    # 但命令直接执行
+    # 单命令直接执行
     from commands.hello import hello
     from commands.env import env
     from commands.db import db_init
+
     app.cli.add_command(hello)
     app.cli.add_command(env)
     app.cli.add_command(db_init)

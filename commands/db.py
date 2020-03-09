@@ -1,12 +1,13 @@
-import click
 from app.db import db
+from app import app
 
 # import all  models
 from app.models import *
 
 
-@click.command('db:init')
+@app.cli.command('db:init')
 def db_init():
-    """Database init"""
-    db.create_all()
-    print("Hello World!")
+    with app.app_context():
+        db.create_all()
+    print('Hello World!')
+
