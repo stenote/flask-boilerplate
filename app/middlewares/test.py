@@ -2,7 +2,7 @@ import traceback
 
 
 from flask import abort, jsonify
-from .base import BaseMiddleware
+from app.middlewares.base import BaseMiddleware
 
 
 class TestMiddleware(BaseMiddleware):

@@ -1,4 +1,4 @@
-from .base import BaseMiddleware
+from app.middlewares.base import BaseMiddleware
 
 
 class FooMiddleware(BaseMiddleware):

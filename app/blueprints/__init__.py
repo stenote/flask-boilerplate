@@ -1,5 +1,5 @@
-from .demo import demo
+from app.blueprints.demo_bp import demo_bp
 
 bps = {
-    '/demo': demo,
+    '/demo': demo_bp,
 }

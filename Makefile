@@ -4,7 +4,7 @@
 all: local-run
 
 local-run:
-	source ./venv/bin/activate && FLASK_APP=app.flask_app FLASK_ENVIRONMENT=development FLASK_DEBUG=True flask run
+	source ./venv/bin/activate && FLASK_APP=app FLASK_ENVIRONMENT=development FLASK_DEBUG=True flask run
 
 venv:
 	rm -rf ./venv
@@ -12,3 +12,4 @@ venv:
 
 run-commands:
 	source ./venv/bin/activate && FLASK_APP=commands flask
+

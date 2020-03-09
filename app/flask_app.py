@@ -4,11 +4,14 @@
 from flask import Flask
 
 
-def create_app():
+def create_app(web_app=True):
     app = Flask(__name__.split('.')[0])
     register_config(app)
-    register_blueprint(app)
-    register_middleware(app)
+
+    if web_app:
+        register_blueprint(app)
+        register_api(app)
+        register_middleware(app)
 
     return app
 
@@ -33,9 +36,13 @@ def register_blueprint(app):
         app.register_blueprint(bp, url_prefix=url_prefix)
 
 
+def register_api(app):
+    from app.apis import apis
+    for url_prefix, api in apis.items():
+        app.register_blueprint(api, url_prefix='/api' + url_prefix)
+
+
 # 注册配置信息
 def register_config(app):
     app.config.from_pyfile('config.py')
 
-
-app = create_app()

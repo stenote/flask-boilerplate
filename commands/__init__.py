@@ -1,4 +1,32 @@
-# -*- coding: utf-8 -*-
+def register_blueprint(app):
+    # 引入 blueprint
+    from commands.blueprints import bps
 
-from .hello import *
-from .db import *
+    for cli_group, bp_conf in bps.items():
+        app.register_blueprint(bp_conf, cli_group=cli_group)
+
+
+def register_commands(app):
+    # 但命令直接执行
+    from commands.hello import hello
+    from commands.env import env
+    from commands.db import db_init
+    app.cli.add_command(hello)
+    app.cli.add_command(env)
+    app.cli.add_command(db_init)
+
+
+def create_app():
+    from app.flask_app import create_app
+    app = create_app(web_app=False)
+
+    # 加载普通命令
+    register_commands(app)
+
+    # 加载 blueprint 命令(cli_group 模式)
+    register_blueprint(app)
+
+    return app
+
+
+app = create_app()
