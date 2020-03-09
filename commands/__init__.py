@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from app import app
 
 def register_blueprint(app):
     # 引入 blueprint
@@ -20,17 +21,9 @@ def register_commands(app):
     app.cli.add_command(db_init)
 
 
-def create_app():
-    from app.flask_app import create_app
-    app = create_app(web_app=False)
+# 加载普通命令
+register_commands(app)
 
-    # 加载普通命令
-    register_commands(app)
+# 加载 blueprint 命令(cli_group 模式)
+register_blueprint(app)
 
-    # 加载 blueprint 命令(cli_group 模式)
-    register_blueprint(app)
-
-    return app
-
-
-app = create_app()

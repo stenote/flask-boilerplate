@@ -4,14 +4,13 @@
 from flask import Flask
 
 
-def create_app(web_app=True):
+def create_app():
     app = Flask(__name__.split('.')[0])
     register_config(app)
 
-    if web_app:
-        register_blueprint(app)
-        register_api(app)
-        register_middleware(app)
+    register_blueprint(app)
+    register_api(app)
+    register_middleware(app)
 
     return app
 

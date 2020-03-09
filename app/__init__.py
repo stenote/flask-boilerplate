@@ -14,4 +14,4 @@ class Singleton(object):
         return self.instance
 
 
-app = Singleton(create_app)(web_app=True)
+app = Singleton(create_app)()

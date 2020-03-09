@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from app.middlewares.base import BaseMiddleware
 
 
