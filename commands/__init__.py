@@ -2,6 +2,7 @@
 
 from app import app
 
+
 def register_blueprint(app):
     # 引入 blueprint
     from commands.blueprints import bps
@@ -26,4 +27,3 @@ register_commands(app)
 
 # 加载 blueprint 命令(cli_group 模式)
 register_blueprint(app)
-

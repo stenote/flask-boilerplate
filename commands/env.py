@@ -7,4 +7,3 @@ from app import app
 @click.argument('var')
 def env(var):
     print(os.getenv(var, None))
-

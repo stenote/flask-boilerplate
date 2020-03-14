@@ -5,7 +5,7 @@ from app.db import db
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True,
-                        autoincrement=True, unique=True)
+                   autoincrement=True, unique=True)
     username = db.Column(db.String(255))
 
     def __init__(self, username):

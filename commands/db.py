@@ -9,4 +9,3 @@ from app.models import *
 def db_init():
     db.create_all()
     print('Hello World!')
-
