@@ -77,7 +77,8 @@ def register_blueprint(app):
 
 def register_api(app):
     """
-    注册 api namespace 下的 blueprint
+    1. 注册 api namespace 下的 blueprint
+    2. 注册 restful API
     :param app: flask instance
     :return: none
     """
