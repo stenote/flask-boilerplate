@@ -20,4 +20,3 @@ class Hello(Resource):
         return {
             'hello': 'world'
         }
-

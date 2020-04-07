@@ -1,15 +1,27 @@
+all: web
 
-.PHONY: all local-run venv run-commands
+help:
+	@echo "flask-boilerplate 0.0.1"
+	@echo ""
+	@echo "Usage"
+	@echo "  help		Show this message."
+	@echo "  shell		Spawns a shell within the virtual environment."
+	@echo "  web    	Local run dev server."
+	@echo "  env		Installs the project dependencies."
+	@echo "  cli	    	Run CLI Commands."
+	@echo "  lint		Lint all python files."
 
-all: local-run
+shell:
+	poetry shell
 
-local-run:
-	source ./venv/bin/activate && FLASK_APP=app FLASK_ENVIRONMENT=development FLASK_DEBUG=True flask run
+web:
+	poetry shell && FLASK_APP=app FLASK_ENVIRONMENT=development FLASK_DEBUG=True flask run
 
-venv:
-	rm -rf ./venv
-	python3 -m venv venv && source ./venv/bin/activate && pip install -r requirements.txt
+env:
+	poetry install
 
-run-commands:
-	source ./venv/bin/activate && FLASK_APP=commands flask
+cli:
+	poetry shell && FLASK_APP=commands flask $(COMMAND)
 
+lint:
+	poetry shell && autopep8 -i -v -r `find ./ -name '*.py'`
