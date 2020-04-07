@@ -1,7 +1,7 @@
 all: web
 
 help:
-	@echo "flask-boilerplate 0.0.1"
+	@echo "flask-boilerplate 0.0.2"
 	@echo ""
 	@echo "Usage"
 	@echo "  help		Show this message."
