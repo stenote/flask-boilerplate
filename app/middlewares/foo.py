@@ -1,6 +1,4 @@
-# -*- coding: utf-8 -*-
-
-from app.middlewares.base import BaseMiddleware
+from .base import BaseMiddleware
 
 
 class FooMiddleware(BaseMiddleware):

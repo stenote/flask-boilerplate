@@ -1,17 +1,17 @@
 # flask-boilerplate
 
-一个用于快速基于 [`flask`](https://flask.palletsprojects.com/en/1.1.x/) 框架进行 web 开发的模版项目。
+一个用于快速基于 [`flask`](https://flask.palletsprojects.com/en/latest/) 框架进行 web 开发的模版项目。
 
 ## 环境依赖
 
 ### 生产环境
 
 * `python3`
-* [`flask`](https://flask.palletsprojects.com/en/1.1.x/) >= 1.1.1
-* [`python-dotenv`](https://github.com/theskumar/python-dotenv) >= 0.10.3
-* [`flask-sqlalchemy`](https://flask-sqlalchemy.palletsprojects.com/) == 2.4.1
-* [`flask-restplus`](https://flask-restplus.readthedocs.io/en/stable/) == 0.13.0
-* [`click`](https://click.palletsprojects.com/) == 7.1.1
+* [`flask`](https://flask.palletsprojects.com/en/latest/) >= 2.1.x
+* [`python-dotenv`](https://github.com/theskumar/python-dotenv) >= 0.20.0
+* [`flask-sqlalchemy`](https://flask-sqlalchemy.palletsprojects.com/) == 2.5.1
+* [`flask-restx`](https://flask-restx.readthedocs.io/en/latest/) == 0.5.1
+* [`click`](https://click.palletsprojects.com/) == 8.1.2
 
 ### 开发环境
 
@@ -39,4 +39,4 @@
 #### restful 接口管理
 #### 非 restful 接口管理
 
-### comands 管理
+### commands 管理

@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-
 class BaseMiddleware(object):
     """
     基础 middleware

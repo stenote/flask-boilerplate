@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
-
 from flask import Blueprint
-from flask_restplus import Api, Resource, apidoc
+from flask_restx import Api, Resource, apidoc
 
-rest_api = Blueprint(__name__, __name__)
-
+rest_api = Blueprint('rest_api', __name__)
 
 api = Api(rest_api, doc='/doc/')
 

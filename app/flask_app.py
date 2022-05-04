@@ -1,10 +1,5 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import logging
-
 from flask import Flask
-from flask.logging import default_handler
 
 
 def create_app():
@@ -25,9 +20,8 @@ def register_logger(app):
     :return:  none
     """
 
-    # remove default logging if need
-    if app.config.get('REMOVE_DEFAULT_LOGGING', False):
-        app.logger.removeHandler(default_handler)
+    # logger 单例
+    logger = logging.getLogger(app.name)
 
     for log_conf in app.config.get('LOGGING', []):
         log_level = log_conf.get('level', logging.WARNING)
@@ -37,14 +31,16 @@ def register_logger(app):
 
         # instance handler
         handler = getattr(logging, log_conf.get('handler'))(
-            *log_conf.get('handler_args'))
+            *log_conf.get('handler_args', [])
+        )
+
         handler.setLevel(log_level)
 
         log_format = logging.Formatter(log_conf.get('format'))
         handler.setFormatter(log_format)
 
         # register logger
-        app.logger.addHandler(handler)
+        logger.addHandler(handler)
 
 
 def register_middleware(app):

@@ -1,11 +1,9 @@
-# -*- coding: utf-8 -*-
-
 from flask import Blueprint, current_app
 
-bp = Blueprint(__name__, __name__)
+demo_bp = Blueprint('cli_demo', __name__)
 
 
-@bp.cli.command('hello')
+@demo_bp.cli.command('hello')
 def hello():
     """
     Demo Hello

@@ -1,10 +1,7 @@
-# -*- coding: utf-8 -*-
-
 import traceback
 
-
-from flask import abort, jsonify
-from app.middlewares.base import BaseMiddleware
+from flask import jsonify
+from .base import BaseMiddleware
 
 
 class TestMiddleware(BaseMiddleware):
