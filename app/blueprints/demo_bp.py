@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template
 
-demo_bp = Blueprint('demo', __name__)
+demo_bp = Blueprint('demo', __name__, template_folder='templates')
 
 
 @demo_bp.route('/')
@@ -14,4 +14,4 @@ def demo_index(names=None):
     else:
         names = names.split(',')
 
-    return render_template('demo/index.html', names=names)
+    return render_template('demo.html', names=names)
