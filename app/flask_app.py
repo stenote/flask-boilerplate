@@ -26,6 +26,7 @@ def register_logger(app):
     for log_conf in app.config.get('LOGGING', []):
         log_level = log_conf.get('level', logging.WARNING)
 
+        # debug 级别开启 debug
         if log_level < logging.WARNING:
             app.debug = True
 
@@ -89,4 +90,5 @@ def register_config(app):
     :param app: flask instance
     :return: none
     """
-    app.config.from_pyfile('config.py')
+    from .config import Config
+    app.config.from_object(Config)

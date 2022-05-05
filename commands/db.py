@@ -1,5 +1,5 @@
-from app.db import db
 from app import app
+from app.db import db
 
 # import all  models
 from app.models import *

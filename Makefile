@@ -15,7 +15,7 @@ shell:
 	poetry shell
 
 web:
-	poetry shell && FLASK_APP=app FLASK_ENVIRONMENT=development FLASK_DEBUG=True flask run
+	poetry shell && FLASK_APP=app FLASK_ENVIRONMENT=dev flask run
 
 env:
 	poetry install
