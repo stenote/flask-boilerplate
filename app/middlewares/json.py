@@ -1,4 +1,4 @@
-import json
+from flask import jsonify
 
 from .base import BaseMiddleware
 
@@ -6,10 +6,13 @@ from .base import BaseMiddleware
 class JsonMiddleware(BaseMiddleware):
 
     def after_request(self, response):
-        # 进行 jsonify 返回结果进行统一处理
-        if response.content_type == 'application/json':
-            response.set_data(json.dumps({
+        # 对返回结果强制进行转为 json 结果
+        data = response.get_json(force=True)
+        if 'data' not in data:
+            return jsonify({
                 'code': 0,
                 'data': response.get_json(force=True)
-            }))
+            })
+
+        # data 存在，则不进行处理
         return response

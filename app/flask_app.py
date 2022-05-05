@@ -50,9 +50,9 @@ def register_middleware(app):
     :param app: flask instance
     :return: none
     """
-    from app.middlewares import middlewares
+    from app.middlewares import common_middlewares
 
-    for middleware in [middleware(app) for middleware in middlewares]:
+    for middleware in [middleware() for middleware in common_middlewares]:
         app.before_request(middleware.before_request)
         app.after_request(middleware.after_request)
 
