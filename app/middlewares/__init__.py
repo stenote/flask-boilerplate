@@ -1,8 +1,8 @@
 # middlewares 列表
-from .test import TestMiddleware
-from .foo import FooMiddleware
+from .demo import DemoMiddleware
+from .json import JsonMiddleware
 
 middlewares = [
-    TestMiddleware,
-    FooMiddleware,
+    DemoMiddleware,
+    JsonMiddleware,
 ]

@@ -1,16 +1,16 @@
 import traceback
-
 from flask import jsonify
+
 from .base import BaseMiddleware
 
 
-class TestMiddleware(BaseMiddleware):
+class DemoMiddleware(BaseMiddleware):
 
     def before_request(self):
-        print('test middleware before request')
+        print('demo middleware before request')
 
     def after_request(self, response):
-        print('test middleware after request')
+        print('demo middleware after request')
         return response
 
     def error_handler(self, exception):
