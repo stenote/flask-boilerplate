@@ -12,6 +12,7 @@ python-dotenv = "0.20.0"
 flask-sqlalchemy = "2.5.1"
 flask-restx = "0.5.1"
 click = "8.1.2"
+Flask-Session = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.5.1"
