@@ -9,10 +9,11 @@ def common_response(fn):
     @param fn:
     @return: common function
     """
+
     @functools.wraps(fn)
     def common(*args, **kwargs):
         data = fn(*args, **kwargs)
-        if isinstance(data, (tuple, )):
+        if isinstance(data, (tuple,)):
             # 返回 len(data) 结果可能是 1 或 tuple
             if len(data) > 1:
                 # tuple
@@ -26,7 +27,6 @@ def common_response(fn):
 
         if isinstance(rv, (int, tuple)):
             rv = str(rv)
-
         return (rv, *data) if data else rv
 
     return common
