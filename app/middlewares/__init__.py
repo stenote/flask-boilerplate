@@ -7,9 +7,3 @@ from .json import JsonMiddleware
 common_middlewares = [
     DemoMiddleware,
 ]
-
-__all__ = [
-    'DemoMiddleware',
-    'JsonMiddleware',
-    'common_middlewares',
-]
