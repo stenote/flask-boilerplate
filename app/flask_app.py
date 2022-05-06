@@ -47,6 +47,12 @@ class App(Flask):
         return self
 
     def init_app(self):
+
+        # Session 存储 Redis
+        if self.config['SESSION_TYPE'] == 'redis':
+            from flask_session import Session
+            Session(self)
+
         return self
 
     def load_common_middlewares(self):
