@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "flask-boilerplate"
-version = "0.0.3"
+version = "0.0.4"
 description = "flask boilerplate"
 authors = ["Rui Ma <xjmarui@gmail.com>"]
 license = "MIT"
