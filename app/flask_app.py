@@ -47,7 +47,7 @@ class App(Flask):
 
     def init_app(self):
         # Session 存储 Redis
-        if self.config['SESSION_TYPE'] == 'redis':
+        if self.config.get('SESSION_TYPE') == 'redis':
             from flask_session import Session
             Session(self)
 

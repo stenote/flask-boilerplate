@@ -8,8 +8,8 @@ class ProdConfig(BaseConfig):
 
     SESSION_REDIS = Redis(
         host=o('REDIS_HOST', '127.0.0.1'),
-        port=o('REDIS_PORT', 6379),
-        db=o('REDIS_DB_SESSION', 7)
+        port=int(o('REDIS_PORT', 6379)),
+        db=int(o('REDIS_DB_SESSION', 7))
     )
 
     # 强制加 salt
