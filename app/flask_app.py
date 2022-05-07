@@ -3,7 +3,6 @@ from flask import Flask
 
 
 class App(Flask):
-
     def load_config(self):
         """
         载入配置信息
@@ -47,7 +46,6 @@ class App(Flask):
         return self
 
     def init_app(self):
-
         # Session 存储 Redis
         if self.config['SESSION_TYPE'] == 'redis':
             from flask_session import Session

@@ -1,13 +1,15 @@
 from redis import Redis
 
-from .base import BaseConfig
+from .base import BaseConfig, o
 
 
 class ProdConfig(BaseConfig):
     SESSION_TYPE = 'redis'
+
     SESSION_REDIS = Redis(
-        host='127.0.0.1',
-        port=6379
+        host=o('REDIS_HOST', '127.0.0.1'),
+        port=o('REDIS_PORT', 6379),
+        db=o('REDIS_DB_SESSION', 7)
     )
 
     # 强制加 salt

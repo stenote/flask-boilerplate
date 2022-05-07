@@ -2,8 +2,18 @@ import os
 import logging
 
 
+def o(key, default=None):
+    """
+    通过环境变量快速获取配置信息的函数
+    @param key:
+    @param default:
+    @return:
+    """
+    return os.getenv(key, default)
+
+
 class BaseConfig(object):
-    APP_NAME = os.getenv('APP_NAME', 'flask')
+    APP_NAME = o('APP_NAME', 'flask')
 
     # Database
     SQLALCHEMY_DATABASE_URI = ''
