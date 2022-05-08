@@ -46,7 +46,7 @@ class App(Flask):
         return self
 
     def init_app(self):
-        # Session 存储 Redis
+        # Session 存储到 Redis 中
         if self.config.get('SESSION_TYPE') == 'redis':
             from flask_session import Session
             Session(self)
@@ -55,7 +55,7 @@ class App(Flask):
 
     def load_common_middlewares(self):
         """
-        给 app 注册中间件
+        通用中间件注册
         :param self: flask instance
         :return self: flask instance
         """

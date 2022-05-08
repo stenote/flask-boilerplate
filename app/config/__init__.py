@@ -1,10 +1,10 @@
 import os
 
-env_mode = os.getenv('FLASK_ENVIRONMENT', 'dev')
+env_mode = os.getenv('FLASK_ENV', 'development')
 
-if env_mode == 'dev':
+if env_mode == 'development':
     from .dev import DevConfig as Config
-elif env_mode == 'prod':
+elif env_mode == 'production':
     from .prod import ProdConfig as Config
-elif env_mode == 'test':
+elif env_mode == 'testing':
     from .test import TestConfig as Config
